@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'net.datatecsolution.sjaap'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // JSON Parsing
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+
+    implementation 'io.reactivex:rxjava:1.1.6'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
+    runtime ('mysql:mysql-connector-java:8.0.20')
+
+    compile group: 'net.sf.jasperreports', name: 'jasperreports', version: '6.10.0'
+
+    compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.4'
+    compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
+
+    compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.7.0'
+}
