@@ -4,12 +4,12 @@ import java.util.List;
 
 public class Abonado {
 
-    private Integer id = 0;
-    private String nombre = "NA";
-    private String apellido = "NA";
-    private String direccion = "NA";
-    private String telefono = "NA";
-    private String email = "NA";
+    private Integer id = 0;//inclir en la vista
+    private String nombre = "NA";//incluir en la vista
+    private String apellido = "NA";//incluir enla vista
+    private String direccion = "NA";//incluir en la vista
+    private String telefono = "NA";//incluir en la vista
+    private String email = "NA";//incluir en la vista
     private List<ConexionAgua> conexiones;
     public Abonado() {
     }
