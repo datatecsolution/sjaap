@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.datatecsolution.jaap.controller.CtlTablaCategoria">
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.datatecsolution.sjaap.controller.CtlTablaCategoria">
    <top>
       <HBox id="container" BorderPane.alignment="CENTER">
          <children>

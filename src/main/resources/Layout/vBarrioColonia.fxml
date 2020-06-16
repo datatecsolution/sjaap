@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.datatecsolution.jaap.controller.CtlTablaCategoria">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.datatecsolution.sjaap.controller.CtlTablaBarrioColonia">
    <top>
       <HBox id="container" BorderPane.alignment="CENTER">
          <children>
@@ -24,7 +24,7 @@
                     <fx:define>
                             <Image fx:id="btnImage" url="@/drawable/plus72.png" />
                     </fx:define>
-                <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregarCategoria">
+                <Button fx:id="btnAgregar" mnemonicParsing="false">
                             <graphic>
                   <ImageView styleClass="rightToggleButton">
                            <image>
@@ -32,7 +32,7 @@
                            </image></ImageView>
                </graphic>
                 </Button>
-                  <Button mnemonicParsing="false">
+                  <Button fx:id="btnEliminar" mnemonicParsing="false">
                      <graphic>
                         <ImageView>
                            <image>
@@ -40,7 +40,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button mnemonicParsing="false">
+                  <Button fx:id="btnBarCod" mnemonicParsing="false">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -59,12 +59,12 @@
                   <Insets bottom="1.0" left="1.0" right="2.0" top="1.0" />
                </HBox.margin>
             </ToolBar>
-            <ToolBar minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" styleClass="toolbarContainer">
+            <ToolBar minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="486.0" styleClass="toolbarContainer">
               <items>
                   <RadioButton fx:id="rbTodos" mnemonicParsing="false" selected="true" text="Todos" />
-                  <RadioButton fx:id="rbId" mnemonicParsing="false" text="ID" />
-                  <RadioButton fx:id="rbNombre" mnemonicParsing="false" text="Nombre" />
-                  <RadioButton fx:id="rbObser" mnemonicParsing="false" text="Observaciones" />
+                  <RadioButton fx:id="rbID" mnemonicParsing="false" text="ID" />
+                  <RadioButton fx:id="rbDescripcion" mnemonicParsing="false" text="Descripcion" />
+                  <RadioButton fx:id="rbSector" mnemonicParsing="false" text="Sector" />
                   <TextField fx:id="txtBuscar" />
                   <Button fx:id="btnBuscar" mnemonicParsing="false" text="Buscar">
                      <graphic>

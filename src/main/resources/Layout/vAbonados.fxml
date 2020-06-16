@@ -8,41 +8,39 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.datatecsolution.sjaap.controller.CtlTablaTipoUsuario">
+<BorderPane prefHeight="488.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.datatecsolution.sjaap.controller.ctlTablaAbonados">
    <top>
       <HBox id="container" BorderPane.alignment="CENTER">
          <children>
-            <ToolBar depthTest="DISABLE" prefHeight="73.0" styleClass="toolbarContainer">
+            <ToolBar depthTest="DISABLE" prefHeight="74.0" prefWidth="134.0" styleClass="toolbarContainer">
               <items>
                     <fx:define>
                             <Image fx:id="btnImage" url="@/drawable/plus72.png" />
                     </fx:define>
-                <Button fx:id="btnAgregar" mnemonicParsing="false">
+                <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregarCategoria">
                             <graphic>
-                  <ImageView styleClass="rightToggleButton">
+                  <ImageView fx:id="btnAgregar" styleClass="rightToggleButton">
                            <image>
                              <Image url="@../drawable/plus72.png" />
                            </image></ImageView>
                </graphic>
                 </Button>
-                  <Button fx:id="btnEliminar" mnemonicParsing="false">
+                  <Button mnemonicParsing="false">
                      <graphic>
-                        <ImageView>
+                        <ImageView fx:id="btnEliminar">
                            <image>
                               <Image url="@../drawable/recycle43.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button fx:id="btnBarCod" mnemonicParsing="false">
+                  <Button mnemonicParsing="false">
                      <graphic>
-                        <ImageView pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="btnBarCod" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../drawable/shopping156(1).png" />
                            </image>
@@ -59,16 +57,19 @@
                   <Insets bottom="1.0" left="1.0" right="2.0" top="1.0" />
                </HBox.margin>
             </ToolBar>
-            <ToolBar minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="514.0" styleClass="toolbarContainer">
+            <ToolBar minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="683.0" styleClass="toolbarContainer">
               <items>
                   <RadioButton fx:id="rbTodos" mnemonicParsing="false" selected="true" text="Todos" />
-                  <RadioButton fx:id="rbID" mnemonicParsing="false" text="ID" />
-                  <RadioButton fx:id="rbDescripcion" mnemonicParsing="false" text="Descripcion" />
-                  <RadioButton fx:id="rbNivelAcceso" mnemonicParsing="false" text="Nivel Acceso" />
+                  <RadioButton fx:id="rbId" mnemonicParsing="false" text="ID" />
+                  <RadioButton fx:id="rbNombre" mnemonicParsing="false" text="Nombre" />
+                  <RadioButton fx:id="rbApellido" mnemonicParsing="false" text="Apellido" />
+                  <RadioButton fx:id="rbDireccion" mnemonicParsing="false" text="Direccion" />
+                  <RadioButton fx:id="rbTelefono" mnemonicParsing="false" text="Telefono" />
+                  <RadioButton fx:id="rbEmail" mnemonicParsing="false" text="Email" />
                   <TextField fx:id="txtBuscar" />
                   <Button fx:id="btnBuscar" mnemonicParsing="false" text="Buscar">
                      <graphic>
-                        <ImageView pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../drawable/database4.png" />
                            </image>
@@ -82,23 +83,23 @@
          </children>
       </HBox>
    </top>
-   <center>
-      <ScrollPane BorderPane.alignment="CENTER">
-        <content>
-                  <TableView fx:id="tDatos" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                    <columns>
-                      <TableColumn fx:id="tcCodigo" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" style="-fx-alignment: center" text="Codigo" />
-                      <TableColumn fx:id="tcDescripcion" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="400.0" text="Descripcion" />
-                        <TableColumn fx:id="tcNivelAcceso" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="151.0" text="Nivel Acceso" />
-                    </columns>
-                     <effect>
-                        <Blend />
-                     </effect>
-                  </TableView>
-        </content>
-      </ScrollPane>
-   </center>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
+   <left>
+      <ScrollPane prefHeight="402.0" prefWidth="823.0" BorderPane.alignment="CENTER">
+         <content>
+            <TableView prefHeight="397.0" prefWidth="814.0">
+              <columns>
+                <TableColumn fx:id="tcCodigo" prefWidth="102.0" text="Codigo" />
+                <TableColumn fx:id="tcNombre" prefWidth="156.0" text="Nombre" />
+                  <TableColumn fx:id="tcApellido" minWidth="4.0" prefWidth="157.0" text="Apellido" />
+                  <TableColumn fx:id="tcDireccion" prefWidth="150.0" text="Direccion" />
+                  <TableColumn fx:id="tcTelefono" prefWidth="105.0" text="Telefono" />
+                  <TableColumn fx:id="tcEmail" prefWidth="143.0" text="Email" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </left>
 </BorderPane>
