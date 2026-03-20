@@ -1,0 +1,28 @@
+services:
+  # ── Backend (Spring Boot) ───────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sjaap-backend
+    restart: unless-stopped
+    environment:
+      DB_URL: jdbc:mysql://host.docker.internal:3306/sjaap?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull
+      DB_USERNAME: root
+      DB_PASSWORD: Jdmm123.
+    ports:
+      - "8081:8081"
+
+  # ── Frontend (React + Nginx) ────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:8081/api
+    container_name: sjaap-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"

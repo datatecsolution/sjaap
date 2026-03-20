@@ -231,6 +231,13 @@ DerivedData
 
 Contrib/**/
 
+### Frontend
+frontend/node_modules/
+frontend/dist/
+
+### Logs
+*.log
+
 
 
 # Created by https://www.gitignore.io/api/java,gradle,intellij
